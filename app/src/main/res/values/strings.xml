@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">MSB_Mobile</string>
+
+    <string-array name="jenis_kelamin">
+        <item>Pria</item>
+        <item>Wanita</item>
+    </string-array>
+
+    <string-array name="golongan_darah">
+        <item>A</item>
+        <item>B</item>
+        <item>AB</item>
+        <item>O</item>
+    </string-array>
+</resources>
