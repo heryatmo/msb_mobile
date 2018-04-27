@@ -1,4 +1,9 @@
 package com.example.heryatmo.msb_mobile.model
 
-class Post {
-}
+import com.google.gson.annotations.SerializedName
+
+
+data class Post(
+    val nama: String,
+    val kebutuhan: String
+)

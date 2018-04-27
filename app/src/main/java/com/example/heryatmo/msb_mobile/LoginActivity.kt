@@ -31,9 +31,7 @@ class LoginActivity : AppCompatActivity() {
 
         btnLogin.setOnClickListener(View.OnClickListener {
             doLogin(Login(email, password))
-//            if(validateLogin(email, password)) {
-//
-//            }
+
         });
 
     }
@@ -57,13 +55,15 @@ class LoginActivity : AppCompatActivity() {
 
         call.enqueue(object : Callback<Login>{
             override fun onResponse(call: Call<Login>?, response: Response<Login>?) {
-                val intent = Intent(this@LoginActivity, MainActivity::class.java)
-                startActivity(intent)
-               Toast.makeText(this@LoginActivity,"Login Berhasil",Toast.LENGTH_LONG).show()
+
+                    val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                    startActivity(intent)
+                    Toast.makeText(this@LoginActivity, "Login Berhasil", Toast.LENGTH_SHORT).show()
+
             }
 
             override fun onFailure(call: Call<Login>?, t: Throwable?) {
-                Toast.makeText(this@LoginActivity,"Login Gagal",Toast.LENGTH_LONG).show()
+                Toast.makeText(this@LoginActivity,"Login Gagal",Toast.LENGTH_SHORT).show()
             }
         })
 

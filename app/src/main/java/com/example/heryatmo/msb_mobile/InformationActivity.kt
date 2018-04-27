@@ -1,23 +1,43 @@
 package com.example.heryatmo.msb_mobile
 
+import android.content.Intent
 import android.os.Bundle
+import android.support.annotation.BinderThread
 import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.LinearLayout
+import android.widget.Toast
+import com.example.heryatmo.msb_mobile.model.Login
+import com.example.heryatmo.msb_mobile.model.Post
+import com.example.heryatmo.msb_mobile.remote.APIService
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.internal.schedulers.IoScheduler
+import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_information.*
 import kotlinx.android.synthetic.main.app_bar_information.*
+import kotlinx.android.synthetic.main.content_information.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
 
 class InformationActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_information)
-        setSupportActionBar(toolbar)
 
+        setSupportActionBar(toolbar)
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
@@ -29,6 +49,8 @@ class InformationActivity : AppCompatActivity(), NavigationView.OnNavigationItem
         toggle.syncState()
 
         nav_view.setNavigationItemSelectedListener(this)
+
+
     }
 
     override fun onBackPressed() {
@@ -81,4 +103,7 @@ class InformationActivity : AppCompatActivity(), NavigationView.OnNavigationItem
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
     }
+
+
+
 }
