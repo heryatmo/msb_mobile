@@ -26,7 +26,7 @@ interface APIService {
             val retrofit = Retrofit.Builder()
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .addConverterFactory(GsonConverterFactory.create())
-                    .baseUrl("https://msb.bluebox2.com/")
+                    .baseUrl("https://msb.bluebox2.com/api/v1/")
                     .build()
             return retrofit.create(APIService::class.java);
         }

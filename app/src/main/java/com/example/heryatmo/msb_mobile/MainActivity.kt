@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity(){
     private var mCompositeDisposable: CompositeDisposable? = null
     private var mPostArrayList: ArrayList<Post>? = null
     private val TAG = MainActivity::class.java.simpleName
-    private val BASE_URL = "https://msb.bluebox2.com/"
+    private val BASE_URL = "https://msb.bluebox2.com/api/v1/"
     private var mAdapter: CustomAdapter? = null
 
 
