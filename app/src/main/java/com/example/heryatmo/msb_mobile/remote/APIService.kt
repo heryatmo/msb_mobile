@@ -15,10 +15,10 @@ import retrofit2.http.POST
 
 interface APIService {
 
-    @POST("loginAPI")
+    @POST("api/v1/loginAPI")
     abstract fun loginAPI(@Body login : Login) : Call<Login>
 
-    @GET("tampilPost")
+    @GET("api/v1/tampilPost")
     abstract fun tampilPost() : Observable<List<Post>>
 
     companion object Factory {
@@ -26,7 +26,7 @@ interface APIService {
             val retrofit = Retrofit.Builder()
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .addConverterFactory(GsonConverterFactory.create())
-                    .baseUrl("https://msb.bluebox2.com/api/v1/")
+                    .baseUrl("https://msb.bluebox2.com/")
                     .build()
             return retrofit.create(APIService::class.java);
         }
